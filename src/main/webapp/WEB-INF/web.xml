@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+
+    <servlet>
+        <servlet-name>docs</servlet-name>
+        <servlet-class>com.github.ykiselev.servlet.FileServlet</servlet-class>
+        <init-param>
+            <param-name>docBaseParameterName</param-name>
+            <param-value>doc.base</param-value>
+        </init-param>
+        <init-param>
+            <param-name>prefix</param-name>
+            <param-value>/docs/</param-value>
+        </init-param>
+        <init-param>
+            <param-name>removePrefix</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <multipart-config>
+            <maxFileSize>10000000000</maxFileSize>
+        </multipart-config>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>docs</servlet-name>
+        <url-pattern>/docs/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
